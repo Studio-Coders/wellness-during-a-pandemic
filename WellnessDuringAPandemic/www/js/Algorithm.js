@@ -4,7 +4,7 @@
 // Class constructor takes in 3 arrays as parameters: Names Array, Start Sleep Array, End Sleep Array
 class Algorithm {
     constructor(namesArray, startSleepArray, endSleepArray) {
-      let mainList = this.main(namesArray, startSleepArray, endSleepArray);
+        let mainList = this.main(namesArray, startSleepArray, endSleepArray);
     }
 
     main(namesArray, startSleepArray, endSleepArray) {
@@ -15,15 +15,15 @@ class Algorithm {
             mainNames.push(namesArray[j]);
             mainScores.push(this.mainCalculator(startSleepArray[j], endSleepArray[j]));
         }
-        
+
         // Array of objects
         const players = [];
 
         for (let i = 0; i < mainNames.length; i++) {
-            players.push({name: mainNames[i], score:mainScores[i]});
-      }
+            players.push({ name: mainNames[i], score: mainScores[i] });
+        }
 
-      return players;
+        return players;
     }
 
     mainCalculator(sleepStart, sleepEnd) {
@@ -34,7 +34,7 @@ class Algorithm {
         let sleepHoursAverage = this.calculateAverage(sleepHours);
 
         let sleepScore = this.calculateSleepScore(sleepHours, sleepHoursAverage, sleepStart, sleepEnd);
-    
+
         return sleepScore;
     }
 
@@ -91,29 +91,25 @@ class Algorithm {
     }
 
     standardDeviation(values) {
-        var avg = this.average(values);
 
-        var squareDiffs = values.map(function (value) {
-            var diff = value - avg;
-            var sqrDiff = diff * diff;
-            return sqrDiff;
-        });
+        function StandardDeviation(numbersArr) {
+            //--CALCULATE AVAREGE--
+            var total = 0;
+            for (var key in numbersArr)
+                total += numbersArr[key];
+            var meanVal = total / numbersArr.length;
+            //--CALCULATE AVAREGE--
 
-        var avgSquareDiff = this.average(squareDiffs);
+            //--CALCULATE STANDARD DEVIATION--
+            var SDprep = 0;
+            for (var key in numbersArr)
+                SDprep += Math.pow((parseFloat(numbersArr[key]) - meanVal), 2);
+            var SDresult = Math.sqrt(SDprep / numbersArr.length);
+            //--CALCULATE STANDARD DEVIATION--
+            return SDresult;
 
-        var stdDev = Math.sqrt(avgSquareDiff);
-        return stdDev;
-    }
+        }
 
-    average(data) {
-        var sum = data.reduce(function (sum, value) {
-            return sum + value;
-        }, 0);
-
-        var avg = sum / data.length;
-        return avg;
     }
 }
 
-let mainAlgo = new Algorithm(["Tom"], [3], [9]);
-let mainList = mainAlgo.mainList;
