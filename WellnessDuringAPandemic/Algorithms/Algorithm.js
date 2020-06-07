@@ -6,12 +6,17 @@ class Algorithm {
         const mainNames = [];
         const mainScores = [];
 
+        // array of objects
+        const players = [];
+
         for (let i = 0; i < mainList.length; i++) {
-            mainNames.push(mainList[i].name);
-            mainScores.push(mainList[i].sleepScore);
+            players.name.push(mainList[i].name);
+            players.score.push(mainList[i].sleepScore);
         }
 
     }
 
     main()
 }
+
+console.log(main)
