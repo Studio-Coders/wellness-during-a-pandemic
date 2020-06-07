@@ -1,3 +1,7 @@
+// let mainAlgo = new Algorithm(namesArray, startSleepArray, endSleepArray);
+// let mainList = mainAlgo.mainList;
+
+// Class constructor takes in 3 arrays as parameters: Names Array, Start Sleep Array, End Sleep Array
 class Algorithm {
     constructor(namesArray, startSleepArray, endSleepArray) {
       let mainList = this.main(namesArray, startSleepArray, endSleepArray);
@@ -9,16 +13,11 @@ class Algorithm {
 
         for (let j = 0; j < namesArray.length; j++) {
             mainNames.push(namesArray[j]);
-            mainScores.push(this.mainCalculator(namesArray[j], startSleepArray[j], endSleepArray[j]));
+            mainScores.push(this.mainCalculator(startSleepArray[j], endSleepArray[j]));
         }
         
         // Array of objects
         const players = [];
-
-        for (let i = 0; i < mainList.length; i++) {
-            mainNames.push(mainList[i].name);
-            mainScores.push(mainList[i].sleepScore);
-        }
 
         for (let i = 0; i < mainNames.length; i++) {
             players.push({name: mainNames[i], score:mainScores[i]});
@@ -27,9 +26,7 @@ class Algorithm {
       return players;
     }
 
-    mainCalculator(name, sleepStart, sleepEnd) {
-        let name = namex;
-
+    mainCalculator(sleepStart, sleepEnd) {
         // sleepHours is an array holding the number of hours of sleep each day in one week
         let sleepHours = this.calculateSleepHours(sleepStart, sleepEnd);
 
@@ -38,7 +35,7 @@ class Algorithm {
 
         let sleepScore = this.calculateSleepScore(sleepHours, sleepHoursAverage, sleepStart, sleepEnd);
     
-        return sleepScore
+        return sleepScore;
     }
 
     // Returns the average hours of sleep with int[] as input
@@ -117,3 +114,6 @@ class Algorithm {
         return avg;
     }
 }
+
+let mainAlgo = new Algorithm(["Tom"], [3], [9]);
+let mainList = mainAlgo.mainList;
