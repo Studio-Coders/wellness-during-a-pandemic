@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/global.css">
+        <title>Welcome | Wellness During a Pandemic</title>
+    </head>
+    <body>
+        <!--facebook log in-->
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=265039214807888&autoLogAppEvents=1"></script>
+        
+        <script type="text/javascript" src="js/index.js"></script>
+        
+        <h1>Wellness during a Pandemic</h1>
+        <p>To begin, please sign in:</p>
+        <form action="home.html" method="post">
+            <label for="username">Username: </label>
+            <input type="text" name="username" id="username" required>
+            <br>
+            <label for="password">Password: </label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <input type="submit" value="Log In">
+        </form>
+        <p>First time using our service?</p>
+        <button onclick="location.href='signup.html'" type="button"><b>Sign Up</b> by clicking here!</button>
+        <p>...Or sign in using Facebook:</p>
+        <!--facebook button-->
+        <div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>
+    </body>
+</html>
