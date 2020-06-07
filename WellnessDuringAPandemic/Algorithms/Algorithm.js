@@ -3,10 +3,10 @@ class Algorithm {
         // mainList is the main list of Persons
         const mainList = [new Person("Tom", [5, 6, 7, 8, 3, 4, 3], [23, 22.5, 21, 20, 21.75, 23.5, 24])];
 
-        const mainNames = [];
-        const mainScores = [];
+        //const mainNames = [];
+        //const mainScores = [];
 
-        // array of objects
+        // Array of objects
         const players = [];
 
         for (let i = 0; i < mainList.length; i++) {
@@ -15,8 +15,7 @@ class Algorithm {
         }
 
     }
-
-    main()
 }
 
-console.log(main)
+main();
+console.log("hello");
