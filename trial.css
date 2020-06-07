@@ -6,11 +6,15 @@
 .row:nth-child(3) {background: #cd7f32;}
 
 #container {
-    width: 600px;
+    width: 300px;
     height: auto;
   }
+
+  table {
+    width: 300px;
+  }
   
-  .row {
+  tr{
     position: relative;
     display: block;
     width: 100%;
@@ -18,27 +22,23 @@
     border-bottom: 1px solid #AFAFAF;
   }
   
-  .name {
-    position: relative;
-    display: inline-block;
-    width: 75%;
-    line-height: 45px;
+  th, td {
+    text-align: left;
+    padding: 15px;
   }
-  
+
   .score {
-    position: relative;
-    display: inline-block;
-    width: 25%;
+    text-align: right;
   }
-  
-  .row:nth-child(1) {
+
+  tbody tr:nth-child(1) td {
     background: gold;
   }
   
-  .row:nth-child(2) {
+  tbody tr:nth-child(2) td {
     background: #c0c0c0;
   }
   
-  .row:nth-child(3) {
+  tbody tr:nth-child(3) td {
     background: #cd7f32;
   }
