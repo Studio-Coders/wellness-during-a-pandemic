@@ -1,6 +1,6 @@
-export class Person {
-    constructor(name, sleepStart, sleepEnd) {
-        let name = name;
+class Person {
+    constructor(namex, sleepStart, sleepEnd) {
+        let name = namex;
 
         // sleepHours is an array holding the number of hours of sleep each day in one week
         let sleepHours = this.calculateSleepHours(sleepStart, sleepEnd);
@@ -17,8 +17,8 @@ export class Person {
         let listLength = sleepHoursInput.length;
 
         for (let i = 0; i < listLength; i++) {
-            if (sleepHour != 0) {
-                total += sleepHour;
+            if (sleepHoursInput[i] != 0) {
+                total += sleepHoursInput[i];
             }
         }
 
@@ -64,7 +64,7 @@ export class Person {
     }
 
     standardDeviation(values) {
-        var avg = average(values);
+        var avg = this.average(values);
 
         var squareDiffs = values.map(function (value) {
             var diff = value - avg;
@@ -72,7 +72,7 @@ export class Person {
             return sqrDiff;
         });
 
-        var avgSquareDiff = average(squareDiffs);
+        var avgSquareDiff = this.average(squareDiffs);
 
         var stdDev = Math.sqrt(avgSquareDiff);
         return stdDev;
@@ -89,3 +89,8 @@ export class Person {
 
 
 }
+console.log("Hello");
+
+let algo = new Algorithm();
+console.log(algo.mainNames);
+
