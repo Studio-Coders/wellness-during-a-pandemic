@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "358998611636",
+    "firebase_url": "https://wellnessduringapandemic.firebaseio.com",
+    "project_id": "wellnessduringapandemic",
+    "storage_bucket": "wellnessduringapandemic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358998611636:android:448d8117b567e77f3929e1",
+        "android_client_info": {
+          "package_name": "com.studioCoders.wellness"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358998611636-hb06n3c6t0q6ma6uh668cfhp1rkbmbao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxMlcbZc4fetlY2HWe-N2XI6Dzut2R5q8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358998611636-hb06n3c6t0q6ma6uh668cfhp1rkbmbao.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

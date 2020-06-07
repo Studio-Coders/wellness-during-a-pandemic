@@ -3,18 +3,46 @@
     <head>
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/global.css">
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
         <title>Welcome | Wellness During a Pandemic</title>
     </head>
     <body>
         <!--facebook log in-->
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=265039214807888&autoLogAppEvents=1"></script>
+        <!--Firebase Init-->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+        <script src="/__/firebase/7.15.0/firebase-auth.js"></script>
+        <script src="/__/firebase/7.15.0/firebase-database.js"></script>
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAm3RLaWsHtPAe8iXNp5Lt7Hi8UbOvfaYQ",
+            authDomain: "wellnessduringapandemic.firebaseapp.com",
+            databaseURL: "https://wellnessduringapandemic.firebaseio.com",
+            projectId: "wellnessduringapandemic",
+            storageBucket: "wellnessduringapandemic.appspot.com",
+            messagingSenderId: "358998611636",
+            appId: "1:358998611636:web:71cbda07ff2b10a23929e1",
+            measurementId: "G-KFWCV87FMW"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        </script>
         
         <script type="text/javascript" src="js/index.js"></script>
         
         <h1>Wellness during a Pandemic</h1>
         <p>To begin, please sign in:</p>
-        <form action="./html/home.html" method="post">
+        <form action="./home.html">
             <label for="username">Username: </label>
             <input type="text" name="username" id="username" required>
             <br>
@@ -24,7 +52,75 @@
             <input type="submit" value="Log In">
         </form>
         <p>First time using our service?</p>
-        <button onclick="location.href='signup.html'" type="button"><b>Sign Up</b> by clicking here!</button>
+        <button onclick="location.href='./signup.html'" type="button"><b>Sign Up</b> by clicking here!</button>
+        <p>...Or sign in using Google:</p>
+        
+        <script>
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        
+        var uiConfig = {
+            callbacks: {
+                signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                    // User successfully signed in.
+                    // Return type determines whether we continue the redirect automatically
+                    // or whether we leave that to developer to handle.
+                    return true;
+                },
+                uiShown: function() {
+                    // The widget is rendered.
+                    // Hide the loader.
+                    document.getElementById('loader').style.display = 'none';
+                }
+            },
+            // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+            signInFlow: 'popup',
+            signInSuccessUrl: '<url-to-redirect-to-on-success>',
+            signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+            ],
+            // Terms of service url.
+            tosUrl: '<your-tos-url>',
+            // Privacy policy url.
+            privacyPolicyUrl: '<your-privacy-policy-url>'
+        };
+        ui.start('#firebaseui-auth-container', uiConfig);
+        </script>
+        <div id="firebaseui-auth-container"></div>
+        <div id="loader">Loading...</div>
+        <script>
+            firebase.auth().getRedirectResult().then(function(result) {
+                if (result.credential) {
+                    // This gives you a Google Access Token.
+                    // You can use it to access the Google API.
+                    var token = result.credential.accessToken;
+                    // The signed-in user info.
+                    var user = result.user;
+                    // ...
+                }
+            }).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+            });
+            firebase.auth().signInWithRedirect(provider).then(function() {
+                return firebase.auth().getRedirectResult();
+            }).then(function(result) {
+                // This gives you a Google Access Token.
+                // You can use it to access the Google API.
+                var token = result.credential.accessToken;
+                // The signed-in user info.
+                var user = result.user;
+                // ...
+            }).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+            });
+        </script>
+
         <p>...Or sign in using Facebook:</p>
         <!--facebook button-->
         <div class="fb-login-button" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>

@@ -9,6 +9,25 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.studioCoders.wellness"
+    },
+    "cordova-plugin-buildinfo": {
+      "PACKAGE_NAME": "com.studioCoders.wellness"
+    },
+    "cordova-universal-links-plugin": {
+      "PACKAGE_NAME": "com.studioCoders.wellness"
+    },
+    "cordova-plugin-browsertab": {
+      "PACKAGE_NAME": "com.studioCoders.wellness"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.studioCoders.wellness"
+    },
+    "cordova-plugin-customurlscheme": {
+      "URL_SCHEME": "com.studiocoders.wellness",
+      "ANDROID_SCHEME": " ",
+      "ANDROID_HOST": " ",
+      "ANDROID_PATHPREFIX": "/",
+      "PACKAGE_NAME": "com.studioCoders.wellness"
     }
   },
   "dependent_plugins": {}

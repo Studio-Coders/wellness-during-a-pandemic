@@ -23,4 +23,11 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <universal-links>
+    <host name="com.studioCoders.wellness" scheme="https" />
+    <host name="wellnessduringapandemic.firebaseapp.com" scheme="https">
+        <path url="/__/auth/callback"/>
+    </host>
+    <preference name="AndroidLaunchMode" value="singleTask" />
+</universal-links>
 </widget>

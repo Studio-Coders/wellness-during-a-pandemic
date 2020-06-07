@@ -9,6 +9,32 @@
         <!--facebook log in-->
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=265039214807888&autoLogAppEvents=1"></script>
+        <!--Firebase Init-->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+        <script src="/__/firebase/7.15.0/firebase-auth.js"></script>
+        <script src="/__/firebase/7.15.0/firebase-database.js"></script>
+
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAm3RLaWsHtPAe8iXNp5Lt7Hi8UbOvfaYQ",
+            authDomain: "wellnessduringapandemic.firebaseapp.com",
+            databaseURL: "https://wellnessduringapandemic.firebaseio.com",
+            projectId: "wellnessduringapandemic",
+            storageBucket: "wellnessduringapandemic.appspot.com",
+            messagingSenderId: "358998611636",
+            appId: "1:358998611636:web:71cbda07ff2b10a23929e1",
+            measurementId: "G-KFWCV87FMW"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        </script>
         
         <script type="text/javascript" src="js/index.js"></script>
         

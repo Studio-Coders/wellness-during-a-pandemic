@@ -1,0 +1,27 @@
+  
+.container{
+    height: 300px;
+    width: 100%;
+}
+
+#display{
+    width: 100%;
+    font-size: 72px;
+    text-align: center;
+    margin: 0px auto;
+}
+
+#calendar{
+    width: 100%;
+    font-size: 36px;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.buttons{
+    text-align: center;
+}
