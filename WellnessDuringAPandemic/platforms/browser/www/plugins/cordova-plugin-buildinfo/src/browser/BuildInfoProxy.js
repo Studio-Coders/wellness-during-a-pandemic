@@ -35,7 +35,7 @@ BuildInfoProxy = {
 
         try {
             /* <EMBED_CODE> */
-            const json = {"debug":true,"buildDate":"2020-06-07T17:19:42.086Z","packageName":"com.studioCoders.wellness","basePackageName":"com.studioCoders.wellness","name":"WellnessDuringAPandemic","displayName":"WellnessDuringAPandemic","version":"1.0.0","versionCode":"1.0.0"};
+            const json = {"debug":true,"buildDate":"2020-06-07T20:58:50.187Z","packageName":"com.studioCoders.wellness","basePackageName":"com.studioCoders.wellness","name":"WellnessDuringAPandemic","displayName":"WellnessDuringAPandemic","version":"1.0.0","versionCode":"1.0.0"};
             /* </EMBED_CODE> */
 
             var ret = {
