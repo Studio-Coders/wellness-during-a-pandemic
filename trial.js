@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // let name = document.querySelector(".name")
     // let score = document.querySelector(".score")
 
+    // // Add each row to the array
+    // players.forEach(pl => container.querySelectorAll('.row'))
+    // container.querySelectorAll('.row').forEach(el => elements.push(el))
+    
     // Clear the container
     container.innerHTML = ''
 
@@ -19,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return 0;
     });
     // Put the elements back into the container
-    players.forEach(e => container.append(e.name))
-    players.forEach(e => container.append(e.score))
+    players.forEach(e => container.quereSelectorAll('.row').appendChild(e.name))
+    // players.forEach(e => container.append(e.score))
   })
+
+
+
