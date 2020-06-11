@@ -37,4 +37,4 @@ function sort(array) {
 let table = document.querySelector("table");
 let data = Object.keys(players[0]);
 sort(players);
-generateTable(table, players);
+generateTable(table, players); 
